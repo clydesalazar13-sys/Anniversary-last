@@ -1,0 +1,4633 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>♡ Our Little Story ♡</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link
+href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Press+Start+2P&display=swap"
+rel="stylesheet">
+
+
+<style>
+
+/* =========================================================
+   CUSTOM FONTS
+   Put the TTF files beside this HTML file
+========================================================= */
+
+@font-face {
+    font-family: "EphesisCustom";
+    src: url("Ephesis-Regular.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "LavishlyCustom";
+    src: url("LavishlyYours-Regular.ttf") format("truetype");
+}
+
+
+/* =========================================================
+   COLORS
+========================================================= */
+
+:root {
+
+    --fabric-light: #D58A94;
+    --fabric-dark: #800000;
+
+    --cream: #fff3f1;
+
+    --pink: #f4a0ae;
+    --pink-light: #ffd8df;
+    --pink-dark: #c84c64;
+
+    --maroon: #800000;
+    --deep-red: #650000;
+
+    --envelope-red: #8f0717;
+    --envelope-dark: #57000b;
+}
+
+
+/* =========================================================
+   RESET
+========================================================= */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+
+    min-height: 100vh;
+
+    font-family: "Fredoka", sans-serif;
+
+    overflow-x: hidden;
+
+    color: white;
+
+    background-color: var(--fabric-light);
+
+    /*
+       Pink / maroon cloth-like checker pattern
+    */
+
+    background-image:
+
+        linear-gradient(
+            90deg,
+            rgba(128,0,0,.13) 50%,
+            transparent 50%
+        ),
+
+        linear-gradient(
+            0deg,
+            rgba(128,0,0,.13) 50%,
+            transparent 50%
+        ),
+
+        repeating-linear-gradient(
+            90deg,
+            rgba(255,255,255,.10) 0px,
+            rgba(255,255,255,.10) 1px,
+            transparent 1px,
+            transparent 5px
+        ),
+
+        repeating-linear-gradient(
+            0deg,
+            rgba(80,0,0,.08) 0px,
+            rgba(80,0,0,.08) 1px,
+            transparent 1px,
+            transparent 5px
+        );
+
+    background-size:
+        70px 70px,
+        70px 70px,
+        5px 5px,
+        5px 5px;
+
+    background-blend-mode:
+        multiply,
+        multiply,
+        soft-light,
+        soft-light;
+}
+
+
+/* =========================================================
+   FABRIC TEXTURE
+========================================================= */
+
+body::before {
+
+    content: "";
+
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 0;
+
+    pointer-events: none;
+
+    background-image:
+
+        repeating-linear-gradient(
+            0deg,
+            transparent 0px,
+            transparent 2px,
+            rgba(255,255,255,.08) 3px,
+            transparent 4px
+        ),
+
+        repeating-linear-gradient(
+            90deg,
+            transparent 0px,
+            transparent 2px,
+            rgba(90,0,0,.06) 3px,
+            transparent 4px
+        );
+
+    opacity: .8;
+
+    mix-blend-mode: overlay;
+}
+
+
+body::after {
+
+    content: "";
+
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 0;
+
+    pointer-events: none;
+
+    background:
+
+        radial-gradient(
+            circle at 50% 45%,
+            rgba(255,255,255,.13),
+            transparent 55%
+        ),
+
+        linear-gradient(
+            rgba(255,255,255,.05),
+            rgba(80,0,0,.08)
+        );
+
+    mix-blend-mode: soft-light;
+}
+
+
+/* =========================================================
+   FLOATING DECORATIONS
+========================================================= */
+
+.decor {
+
+    position: fixed;
+
+    z-index: 5;
+
+    pointer-events: none;
+
+    user-select: none;
+}
+
+
+.heart {
+    color: #ffdce3;
+
+    text-shadow:
+        0 0 5px white,
+        0 0 12px #ffb7c5;
+}
+
+
+.heart.one {
+
+    top: 14%;
+    left: 7%;
+
+    font-size: 55px;
+
+    animation:
+        floatOne 4s ease-in-out infinite;
+}
+
+
+.heart.two {
+
+    top: 27%;
+    right: 8%;
+
+    font-size: 42px;
+
+    animation:
+        floatTwo 5s ease-in-out infinite;
+}
+
+
+.heart.three {
+
+    bottom: 14%;
+    left: 11%;
+
+    font-size: 38px;
+
+    animation:
+        floatTwo 4.5s ease-in-out infinite;
+}
+
+
+.heart.four {
+
+    bottom: 20%;
+    right: 12%;
+
+    font-size: 55px;
+
+    animation:
+        floatOne 5.5s ease-in-out infinite;
+}
+
+
+.bow {
+
+    font-size: 42px;
+
+    filter:
+        drop-shadow(
+            0 3px 4px
+            rgba(60,0,0,.3)
+        );
+}
+
+
+.bow.one {
+
+    top: 7%;
+    right: 13%;
+
+    animation:
+        floatTwo 5s ease-in-out infinite;
+}
+
+
+.bow.two {
+
+    bottom: 8%;
+    left: 7%;
+
+    animation:
+        floatOne 5s ease-in-out infinite;
+}
+
+
+.sparkle {
+
+    color: white;
+
+    font-size: 25px;
+
+    text-shadow:
+        0 0 8px white;
+
+    animation:
+        sparkleAnimation 2s ease-in-out infinite;
+}
+
+
+.sparkle.one {
+    top: 14%;
+    left: 22%;
+}
+
+
+.sparkle.two {
+
+    top: 23%;
+    right: 25%;
+
+    animation-delay: .5s;
+}
+
+
+.sparkle.three {
+
+    bottom: 18%;
+    left: 25%;
+
+    animation-delay: 1s;
+}
+
+
+.sparkle.four {
+
+    bottom: 28%;
+    right: 22%;
+
+    animation-delay: 1.4s;
+}
+
+
+@keyframes floatOne {
+
+    0%,100% {
+        transform:
+            translateY(0)
+            rotate(-4deg);
+    }
+
+    50% {
+        transform:
+            translateY(-15px)
+            rotate(5deg);
+    }
+}
+
+
+@keyframes floatTwo {
+
+    0%,100% {
+        transform:
+            translateY(0)
+            rotate(4deg);
+    }
+
+    50% {
+        transform:
+            translateY(-18px)
+            rotate(-5deg);
+    }
+}
+
+
+@keyframes sparkleAnimation {
+
+    0%,100% {
+        opacity: .35;
+
+        transform:
+            scale(.8)
+            rotate(0deg);
+    }
+
+    50% {
+        opacity: 1;
+
+        transform:
+            scale(1.3)
+            rotate(15deg);
+    }
+}
+
+
+/* =========================================================
+   SCREEN SYSTEM
+========================================================= */
+
+.screen {
+
+    position: relative;
+
+    z-index: 10;
+
+    min-height: 100vh;
+
+    width: 100%;
+
+    display: none;
+}
+
+
+.screen.active {
+
+    display: flex;
+
+    animation:
+        screenIn .6s ease;
+}
+
+
+@keyframes screenIn {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            scale(.98);
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            scale(1);
+    }
+}
+
+
+/* =========================================================
+   PAGE 1 — PASSWORD
+========================================================= */
+
+#passwordScreen {
+
+    justify-content: center;
+
+    align-items: center;
+
+    padding: 30px;
+}
+
+
+.password-container {
+
+    position: relative;
+
+    width: 370px;
+
+    max-width: 90vw;
+
+    padding:
+        38px 27px 30px;
+
+    text-align: center;
+
+    background:
+        linear-gradient(
+            rgba(255,255,255,.96),
+            rgba(255,239,243,.96)
+        );
+
+    border:
+        5px solid #ef9aaa;
+
+    border-radius: 30px;
+
+    box-shadow:
+
+        0 0 0 3px #ffd8df,
+
+        0 10px 0 #a84c5b,
+
+        0 20px 35px
+        rgba(80,0,0,.35);
+}
+
+
+.password-container::before {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 10px;
+
+    border:
+        2px dashed #f5a4b4;
+
+    border-radius: 23px;
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   RIBBON
+========================================================= */
+
+.ribbon {
+
+    position: absolute;
+
+    top: -34px;
+
+    left: 50%;
+
+    transform:
+        translateX(-50%);
+
+    z-index: 10;
+
+    font-size: 65px;
+
+    filter:
+        drop-shadow(
+            0 5px 4px
+            rgba(130,0,30,.25)
+        );
+
+    animation:
+        ribbonFloat 3s ease-in-out infinite;
+}
+
+
+@keyframes ribbonFloat {
+
+    0%,100% {
+
+        transform:
+            translateX(-50%)
+            rotate(-2deg);
+    }
+
+    50% {
+
+        transform:
+            translateX(-50%)
+            translateY(-5px)
+            rotate(2deg);
+    }
+}
+
+
+.password-title {
+
+    margin-top: 15px;
+
+    color: #8b1029;
+
+    font-size: 25px;
+
+    font-weight: 700;
+}
+
+
+.password-subtitle {
+
+    margin-top: 5px;
+
+    margin-bottom: 20px;
+
+    color: #b65a6c;
+
+    font-size: 14px;
+}
+
+
+/* =========================================================
+   PASSWORD BOXES
+========================================================= */
+
+.password-boxes {
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: 9px;
+
+    margin-bottom: 12px;
+}
+
+
+.password-box {
+
+    width: 52px;
+
+    height: 57px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    background: #fffafa;
+
+    border:
+        3px solid #f48da3;
+
+    border-radius: 12px;
+
+    color: #b51f45;
+
+    font-size: 25px;
+
+    font-weight: 700;
+
+    box-shadow:
+
+        inset 0 2px 5px
+        rgba(255,255,255,.9),
+
+        0 4px 0 #e9a0ad;
+
+    transition: .15s ease;
+}
+
+
+.password-box.filled {
+
+    background: #ffe1e7;
+
+    transform:
+        translateY(-3px);
+}
+
+
+/* =========================================================
+   HINT
+========================================================= */
+
+.hint {
+
+    margin:
+        5px 0 19px;
+
+    padding:
+        7px 8px;
+
+    border:
+        2px dashed #efa1b0;
+
+    border-radius: 20px;
+
+    color: #a83b55;
+
+    font-size: 11px;
+
+    background: #fff5f7;
+}
+
+
+/* =========================================================
+   KEYPAD
+========================================================= */
+
+.keypad {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap: 9px;
+
+    max-width: 260px;
+
+    margin: auto;
+}
+
+
+.key {
+
+    height: 48px;
+
+    border:
+        2px solid #f48da3;
+
+    border-radius: 12px;
+
+    background:
+        linear-gradient(
+            #fff9fa,
+            #ffdce4
+        );
+
+    color: #a51f42;
+
+    font-family:
+        "Fredoka",
+        sans-serif;
+
+    font-size: 20px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    box-shadow:
+
+        0 4px 0 #df8a9b,
+
+        inset 0 1px 4px white;
+
+    transition: .12s ease;
+}
+
+
+.key:hover {
+
+    transform:
+        translateY(-2px);
+}
+
+
+.key:active {
+
+    transform:
+        translateY(3px);
+}
+
+
+.message {
+
+    min-height: 22px;
+
+    margin-top: 13px;
+
+    color: #a51f42;
+
+    font-size: 13px;
+
+    font-weight: 600;
+}
+
+
+/* =========================================================
+   SUCCESS POPUP
+========================================================= */
+
+.popup-overlay {
+
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 100;
+
+    display: none;
+
+    justify-content: center;
+
+    align-items: center;
+
+    background:
+        rgba(70,0,20,.48);
+
+    backdrop-filter:
+        blur(5px);
+}
+
+
+.popup-overlay.show {
+
+    display: flex;
+}
+
+
+.success-popup {
+
+    width: 280px;
+
+    max-width: 85vw;
+
+    padding: 20px;
+
+    text-align: center;
+
+    background:
+        linear-gradient(
+            #fff,
+            #fff8fa
+        );
+
+    border:
+        3px solid #8b1029;
+
+    border-radius: 18px;
+
+    box-shadow:
+
+        0 10px 0 #681020,
+
+        0 20px 40px
+        rgba(0,0,0,.35);
+
+    animation:
+        popupAppear .5s
+        cubic-bezier(.2,.9,.3,1.3);
+}
+
+
+@keyframes popupAppear {
+
+    0% {
+
+        transform:
+            scale(.5);
+
+        opacity: 0;
+    }
+
+    100% {
+
+        transform:
+            scale(1);
+
+        opacity: 1;
+    }
+}
+
+
+.success-title {
+
+    color: #611020;
+
+    font-size: 21px;
+
+    margin-bottom: 8px;
+}
+
+
+.success-image {
+
+    width: 120px;
+
+    height: 120px;
+
+    object-fit: contain;
+
+    display: block;
+
+    margin: 0 auto 5px;
+
+    animation:
+        cuteFloat 2.8s
+        ease-in-out infinite;
+}
+
+
+@keyframes cuteFloat {
+
+    0%,100% {
+
+        transform:
+            translateY(0)
+            rotate(-2deg)
+            scale(1);
+    }
+
+    50% {
+
+        transform:
+            translateY(-9px)
+            rotate(2deg)
+            scale(1.04);
+    }
+}
+
+
+.success-text {
+
+    color: #555;
+
+    font-size: 13px;
+
+    margin-bottom: 12px;
+}
+
+
+.proceed {
+
+    width: 115px;
+
+    padding:
+        9px 15px;
+
+    border: none;
+
+    border-radius: 20px;
+
+    background:
+        linear-gradient(
+            #9d1b38,
+            #72001c
+        );
+
+    color: white;
+
+    font-family:
+        "Fredoka",
+        sans-serif;
+
+    font-weight: 600;
+
+    cursor: pointer;
+}
+
+
+/* =========================================================
+   BACK BUTTON
+========================================================= */
+
+.back-button {
+
+    position: fixed;
+
+    left: 25px;
+
+    bottom: 25px;
+
+    z-index: 500;
+
+    padding:
+        11px 20px;
+
+    border:
+        2px solid #f2a1af;
+
+    border-radius: 25px;
+
+    background:
+        rgba(255,245,247,.94);
+
+    color: #800000;
+
+    font-family:
+        "Fredoka",
+        sans-serif;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 5px 0 #72001c,
+        0 8px 15px rgba(60,0,0,.25);
+
+    transition:
+        transform .15s ease;
+}
+
+
+.back-button:hover {
+
+    transform:
+        translateY(-3px);
+}
+
+
+.back-button:active {
+
+    transform:
+        translateY(2px);
+}
+
+
+/* =========================================================
+   PAGE 2 — ENVELOPE
+========================================================= */
+
+#envelopeScreen {
+
+    justify-content: center;
+
+    align-items: center;
+}
+
+
+.mail-page {
+
+    width: 700px;
+
+    max-width: 90vw;
+
+    min-height: 600px;
+
+    padding:
+        50px 30px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    text-align: center;
+}
+
+
+.mail-title {
+
+    margin-bottom: 30px;
+
+    font-family:
+        "Press Start 2P",
+        monospace;
+
+    font-size: 25px;
+
+    line-height: 1.5;
+
+    text-shadow:
+        3px 3px 0 #650000;
+}
+
+
+.envelope-area {
+
+    position: relative;
+
+    width: 400px;
+
+    max-width: 90vw;
+
+    height: 270px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+}
+
+
+.envelope {
+
+    position: relative;
+
+    width: 340px;
+
+    height: 210px;
+
+    cursor: pointer;
+
+    filter:
+        drop-shadow(
+            0 15px 12px
+            rgba(40,0,0,.35)
+        );
+
+    transition:
+        transform .3s ease;
+}
+
+
+.envelope:hover {
+
+    transform:
+        translateY(-5px)
+        scale(1.015);
+}
+
+
+.envelope-body {
+
+    position: absolute;
+
+    inset: 0;
+
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            145deg,
+            #a40b1c,
+            var(--envelope-red)
+        );
+
+    border-radius: 4px;
+}
+
+
+.envelope-bottom {
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            135deg,
+            #78000e,
+            #9e091b
+        );
+
+    clip-path:
+        polygon(
+            0 0,
+            50% 57%,
+            100% 0,
+            100% 100%,
+            0 100%
+        );
+
+    z-index: 3;
+}
+
+
+.envelope-left {
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            135deg,
+            #b30c20,
+            #79000e
+        );
+
+    clip-path:
+        polygon(
+            0 0,
+            50% 55%,
+            0 100%
+        );
+
+    z-index: 4;
+}
+
+
+.envelope-right {
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            225deg,
+            #b30c20,
+            #79000e
+        );
+
+    clip-path:
+        polygon(
+            100% 0,
+            50% 55%,
+            100% 100%
+        );
+
+    z-index: 4;
+}
+
+
+.envelope-flap {
+
+    position: absolute;
+
+    top: 0;
+
+    left: 0;
+
+    width: 100%;
+
+    height: 65%;
+
+    background:
+        linear-gradient(
+            155deg,
+            #a9091c,
+            #72000d
+        );
+
+    clip-path:
+        polygon(
+            0 0,
+            100% 0,
+            50% 72%
+        );
+
+    transform-origin:
+        top;
+
+    z-index: 6;
+
+    transition:
+        transform .9s
+        cubic-bezier(.2,.8,.2,1);
+}
+
+
+.wax-seal {
+
+    position: absolute;
+
+    z-index: 10;
+
+    left: 50%;
+
+    top: 53%;
+
+    transform:
+        translate(-50%,-50%);
+
+    width: 70px;
+
+    height: 70px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle at 35% 30%,
+            #d87568,
+            #762014 55%,
+            #3d0805
+        );
+
+    border:
+        4px solid #4e0b08;
+
+    box-shadow:
+
+        0 5px 7px
+        rgba(40,0,0,.5),
+
+        inset 3px 3px 4px
+        rgba(255,255,255,.2),
+
+        inset -4px -4px 5px
+        rgba(0,0,0,.35);
+
+    transition:
+        transform .6s ease,
+        opacity .5s ease;
+}
+
+
+.wax-seal::before {
+
+    content: "♥";
+
+    color: #d88a7e;
+
+    font-size: 32px;
+}
+
+
+.envelope.open
+.envelope-flap {
+
+    transform:
+        rotateX(180deg);
+}
+
+
+.envelope.open
+.wax-seal {
+
+    transform:
+        translate(-50%,-50%)
+        scale(.3)
+        rotate(20deg);
+
+    opacity: 0;
+}
+
+
+.instruction {
+
+    margin-top: 10px;
+
+    font-size: 15px;
+
+    text-shadow:
+        1px 2px 0 #650000;
+}
+
+
+/* =========================================================
+   PAGE 3 — LETTER
+========================================================= */
+
+#letterScreen {
+
+    justify-content: center;
+
+    align-items: center;
+}
+
+
+.letter {
+
+    position: relative;
+
+    width: 520px;
+
+    max-width: 88vw;
+
+    min-height: 430px;
+
+    padding:
+        55px 55px 50px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #fffefb,
+            #fff8ef
+        );
+
+    color: #541c24;
+
+    border-radius: 4px;
+
+    box-shadow:
+
+        0 25px 60px
+        rgba(70,0,0,.4),
+
+        inset 0 0 25px
+        rgba(180,120,80,.08);
+
+    animation:
+        letterPop .8s
+        cubic-bezier(.2,.9,.3,1.2);
+}
+
+
+@keyframes letterPop {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(80px)
+            scale(.6)
+            rotate(-3deg);
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            scale(1)
+            rotate(0);
+    }
+}
+
+
+.letter::before {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    opacity: .18;
+
+    background:
+        repeating-linear-gradient(
+            0deg,
+            transparent 0px,
+            transparent 5px,
+            #c9a58f 6px
+        );
+}
+
+
+.letter-title {
+
+    position: relative;
+
+    text-align: center;
+
+    color: #800000;
+
+    font-size: 28px;
+
+    margin-bottom: 25px;
+}
+
+
+.letter-text {
+
+    position: relative;
+
+    color: #541c24;
+
+    font-size: 17px;
+
+    line-height: 1.8;
+
+    white-space: pre-line;
+}
+
+
+/* =========================================================
+   NEXT ARROW
+========================================================= */
+
+.next-arrow {
+
+    position: fixed;
+
+    right: 5%;
+
+    bottom: 25px;
+
+    z-index: 500;
+
+    width: 70px;
+
+    height: 70px;
+
+    border:
+        2px solid #f2a1af;
+
+    border-radius: 50%;
+
+    background:
+        rgba(255,245,247,.95);
+
+    color: #800000;
+
+    font-size: 38px;
+
+    cursor: pointer;
+
+    box-shadow:
+
+        0 5px 0 #72001c,
+
+        0 8px 15px
+        rgba(60,0,0,.25);
+
+    animation:
+        arrowBounce 1.4s
+        ease-in-out infinite;
+}
+
+
+@keyframes arrowBounce {
+
+    0%,100% {
+
+        transform:
+            translateY(0);
+    }
+
+    50% {
+
+        transform:
+            translateY(-8px);
+    }
+}
+
+
+/* =========================================================
+   PAGE 4 — ANNIVERSARY
+========================================================= */
+
+#anniversaryScreen {
+
+    justify-content: center;
+
+    align-items: center;
+
+    text-align: center;
+
+    padding: 40px;
+}
+
+
+.anniversary-container {
+
+    width:
+        min(1000px, 92vw);
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+}
+
+
+.anniversary-small {
+
+    margin-bottom: 25px;
+
+    color: #fff5f6;
+
+    font-family:
+        "Fredoka",
+        sans-serif;
+
+    font-size: 16px;
+
+    letter-spacing: 2px;
+
+    text-shadow:
+        2px 2px 0 #650000;
+}
+
+
+.typing-text {
+
+    min-height: 150px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    color: #fffafa;
+
+    font-family:
+        "EphesisCustom",
+        "LavishlyCustom",
+        cursive;
+
+    font-size:
+        clamp(
+            50px,
+            8vw,
+            100px
+        );
+
+    line-height: 1.15;
+
+    text-shadow:
+
+        3px 4px 0 #650000,
+
+        0 0 12px
+        rgba(255,255,255,.3);
+}
+
+
+.typing-cursor {
+
+    display: inline-block;
+
+    width: 3px;
+
+    height: .9em;
+
+    margin-left: 8px;
+
+    background: white;
+
+    box-shadow:
+        0 0 8px white;
+
+    animation:
+        cursorBlink .8s infinite;
+}
+
+
+@keyframes cursorBlink {
+
+    0%,45% {
+        opacity: 1;
+    }
+
+    46%,100% {
+        opacity: 0;
+    }
+}
+
+
+.anniversary-decoration {
+
+    margin-top: 25px;
+
+    color: #ffe5ea;
+
+    font-size: 28px;
+
+    letter-spacing: 12px;
+
+    animation:
+        decorationFloat 3s
+        ease-in-out infinite;
+}
+
+
+@keyframes decorationFloat {
+
+    0%,100% {
+
+        transform:
+            translateY(0);
+    }
+
+    50% {
+
+        transform:
+            translateY(-8px);
+    }
+}
+
+
+/* =========================================================
+   PAGE 5 — GALLERY
+========================================================= */
+
+#galleryScreen {
+
+    display: none;
+
+    min-height: 100vh;
+}
+
+
+#galleryScreen.active {
+
+    display: block;
+}
+
+
+.gallery-page {
+
+    position: relative;
+
+    z-index: 10;
+
+    width: 100%;
+
+    max-width: 1150px;
+
+    margin: auto;
+
+    padding:
+        80px 25px 150px;
+}
+
+
+.gallery-title {
+
+    text-align: center;
+
+    margin-bottom: 100px;
+}
+
+
+.gallery-title h1 {
+
+    font-family:
+        "Press Start 2P",
+        monospace;
+
+    font-size: 28px;
+
+    line-height: 1.6;
+
+    text-shadow:
+        3px 3px 0 #650000;
+}
+
+
+.gallery-title p {
+
+    margin-top: 15px;
+
+    font-size: 16px;
+}
+
+
+.photo-section {
+
+    margin-bottom: 80px;
+}
+
+
+.photo-collage {
+
+    position: relative;
+
+    width: 100%;
+
+    height: 570px;
+}
+
+
+.photo {
+
+    position: absolute;
+
+    width: 185px;
+
+    padding: 9px;
+
+    background: #fffaf7;
+
+    border-radius: 4px;
+
+    box-shadow:
+        0 10px 20px
+        rgba(70,0,0,.35);
+
+    cursor: pointer;
+
+    transition:
+        filter .3s ease;
+}
+
+
+.photo img {
+
+    display: block;
+
+    width: 100%;
+
+    height: 175px;
+
+    object-fit: cover;
+}
+
+
+.photo:hover {
+
+    z-index: 50;
+
+    filter:
+        brightness(1.05);
+}
+
+
+/* =========================================================
+   SECTION 1 — SCATTERED
+========================================================= */
+
+.section-one .photo:nth-child(1) {
+
+    left: 5%;
+    top: 90px;
+
+    transform: rotate(-8deg);
+
+    animation:
+        s1 4.5s ease-in-out infinite;
+}
+
+
+.section-one .photo:nth-child(2) {
+
+    left: 27%;
+    top: 15px;
+
+    transform: rotate(5deg);
+
+    animation:
+        s2 5s ease-in-out infinite;
+}
+
+
+.section-one .photo:nth-child(3) {
+
+    right: 28%;
+    top: 100px;
+
+    transform: rotate(-4deg);
+
+    animation:
+        s3 4.3s ease-in-out infinite;
+}
+
+
+.section-one .photo:nth-child(4) {
+
+    right: 4%;
+    top: 30px;
+
+    transform: rotate(8deg);
+
+    animation:
+        s4 5.2s ease-in-out infinite;
+}
+
+
+.section-one .photo:nth-child(5) {
+
+    left: 43%;
+    bottom: 20px;
+
+    transform: rotate(-6deg);
+
+    animation:
+        s5 4.8s ease-in-out infinite;
+}
+
+
+/* =========================================================
+   SECTION 2 — DIAMOND
+========================================================= */
+
+.section-two .photo:nth-child(1) {
+
+    left: 10%;
+    top: 160px;
+
+    transform: rotate(-9deg);
+
+    animation:
+        d1 4.7s ease-in-out infinite;
+}
+
+
+.section-two .photo:nth-child(2) {
+
+    left: 30%;
+    top: 35px;
+
+    transform: rotate(7deg);
+
+    animation:
+        d2 5s ease-in-out infinite;
+}
+
+
+.section-two .photo:nth-child(3) {
+
+    left: 42%;
+    top: 190px;
+
+    transform:
+        rotate(-2deg)
+        scale(1.08);
+
+    z-index: 10;
+
+    animation:
+        d3 4.4s ease-in-out infinite;
+}
+
+
+.section-two .photo:nth-child(4) {
+
+    right: 25%;
+    top: 40px;
+
+    transform: rotate(-7deg);
+
+    animation:
+        d4 5.1s ease-in-out infinite;
+}
+
+
+.section-two .photo:nth-child(5) {
+
+    right: 5%;
+    top: 165px;
+
+    transform: rotate(10deg);
+
+    animation:
+        d5 4.6s ease-in-out infinite;
+}
+
+
+/* =========================================================
+   SECTION 3 — SCATTERED
+========================================================= */
+
+.section-three .photo:nth-child(1) {
+
+    left: 2%;
+    top: 35px;
+
+    transform: rotate(7deg);
+
+    animation:
+        s31 4.7s ease-in-out infinite;
+}
+
+
+.section-three .photo:nth-child(2) {
+
+    left: 23%;
+    top: 170px;
+
+    transform: rotate(-5deg);
+
+    animation:
+        s32 5.1s ease-in-out infinite;
+}
+
+
+.section-three .photo:nth-child(3) {
+
+    left: 44%;
+    top: 35px;
+
+    transform: rotate(4deg);
+
+    animation:
+        s33 4.5s ease-in-out infinite;
+}
+
+
+.section-three .photo:nth-child(4) {
+
+    right: 22%;
+    top: 215px;
+
+    transform: rotate(-8deg);
+
+    animation:
+        s34 5.2s ease-in-out infinite;
+}
+
+
+.section-three .photo:nth-child(5) {
+
+    right: 2%;
+    top: 70px;
+
+    transform: rotate(6deg);
+
+    animation:
+        s35 4.6s ease-in-out infinite;
+}
+
+
+/* =========================================================
+   SECTION 4 — DIAMOND
+========================================================= */
+
+.section-four .photo:nth-child(1) {
+
+    left: 7%;
+    top: 180px;
+
+    transform: rotate(-11deg);
+
+    animation:
+        d41 4.8s ease-in-out infinite;
+}
+
+
+.section-four .photo:nth-child(2) {
+
+    left: 28%;
+    top: 30px;
+
+    transform: rotate(6deg);
+
+    animation:
+        d42 5.2s ease-in-out infinite;
+}
+
+
+.section-four .photo:nth-child(3) {
+
+    left: 43%;
+    top: 200px;
+
+    transform:
+        rotate(3deg)
+        scale(1.08);
+
+    z-index: 10;
+
+    animation:
+        d43 4.5s ease-in-out infinite;
+}
+
+
+.section-four .photo:nth-child(4) {
+
+    right: 26%;
+    top: 35px;
+
+    transform: rotate(-8deg);
+
+    animation:
+        d44 5s ease-in-out infinite;
+}
+
+
+.section-four .photo:nth-child(5) {
+
+    right: 3%;
+    top: 175px;
+
+    transform: rotate(11deg);
+
+    animation:
+        d45 4.7s ease-in-out infinite;
+}
+
+
+/* =========================================================
+   SECTION 5 — WAVE
+========================================================= */
+
+.section-five .photo:nth-child(1) {
+
+    left: 3%;
+    top: 200px;
+
+    transform: rotate(-8deg);
+
+    animation:
+        w1 4.5s ease-in-out infinite;
+}
+
+
+.section-five .photo:nth-child(2) {
+
+    left: 24%;
+    top: 65px;
+
+    transform: rotate(5deg);
+
+    animation:
+        w2 4.9s ease-in-out infinite;
+}
+
+
+.section-five .photo:nth-child(3) {
+
+    left: 43%;
+    top: 190px;
+
+    transform: rotate(-4deg);
+
+    animation:
+        w3 5.1s ease-in-out infinite;
+}
+
+
+.section-five .photo:nth-child(4) {
+
+    right: 21%;
+    top: 55px;
+
+    transform: rotate(7deg);
+
+    animation:
+        w4 4.6s ease-in-out infinite;
+}
+
+
+.section-five .photo:nth-child(5) {
+
+    right: 2%;
+    top: 195px;
+
+    transform: rotate(-6deg);
+
+    animation:
+        w5 5.2s ease-in-out infinite;
+}
+
+
+/* =========================================================
+   PHOTO ANIMATIONS
+========================================================= */
+
+@keyframes s1 {
+    50% {
+        transform:
+            translateY(-10px)
+            rotate(-5deg);
+    }
+}
+
+@keyframes s2 {
+    50% {
+        transform:
+            translateY(-13px)
+            rotate(7deg);
+    }
+}
+
+@keyframes s3 {
+    50% {
+        transform:
+            translateY(-9px)
+            rotate(-2deg);
+    }
+}
+
+@keyframes s4 {
+    50% {
+        transform:
+            translateY(-12px)
+            rotate(6deg);
+    }
+}
+
+@keyframes s5 {
+    50% {
+        transform:
+            translateY(-10px)
+            rotate(-8deg);
+    }
+}
+
+@keyframes s31 {
+    50% {
+        transform:
+            translateY(-11px)
+            rotate(10deg);
+    }
+}
+
+@keyframes s32 {
+    50% {
+        transform:
+            translateY(-9px)
+            rotate(-2deg);
+    }
+}
+
+@keyframes s33 {
+    50% {
+        transform:
+            translateY(-13px)
+            rotate(7deg);
+    }
+}
+
+@keyframes s34 {
+    50% {
+        transform:
+            translateY(-10px)
+            rotate(-5deg);
+    }
+}
+
+@keyframes s35 {
+    50% {
+        transform:
+            translateY(-12px)
+            rotate(9deg);
+    }
+}
+
+@keyframes d1 {
+    50% {
+        transform:
+            translateY(-10px)
+            rotate(-6deg);
+    }
+}
+
+@keyframes d2 {
+    50% {
+        transform:
+            translateY(-12px)
+            rotate(9deg);
+    }
+}
+
+@keyframes d3 {
+    50% {
+        transform:
+            translateY(-13px)
+            rotate(1deg)
+            scale(1.08);
+    }
+}
+
+@keyframes d4 {
+    50% {
+        transform:
+            translateY(-11px)
+            rotate(-4deg);
+    }
+}
+
+@keyframes d5 {
+    50% {
+        transform:
+            translateY(-9px)
+            rotate(7deg);
+    }
+}
+
+@keyframes d41 {
+    50% {
+        transform:
+            translateY(-11px)
+            rotate(-8deg);
+    }
+}
+
+@keyframes d42 {
+    50% {
+        transform:
+            translateY(-13px)
+            rotate(8deg);
+    }
+}
+
+@keyframes d43 {
+    50% {
+        transform:
+            translateY(-12px)
+            rotate(-1deg)
+            scale(1.08);
+    }
+}
+
+@keyframes d44 {
+    50% {
+        transform:
+            translateY(-10px)
+            rotate(-5deg);
+    }
+}
+
+@keyframes d45 {
+    50% {
+        transform:
+            translateY(-12px)
+            rotate(8deg);
+    }
+}
+
+@keyframes w1 {
+    50% {
+        transform:
+            translateY(-12px)
+            rotate(-5deg);
+    }
+}
+
+@keyframes w2 {
+    50% {
+        transform:
+            translateY(-9px)
+            rotate(7deg);
+    }
+}
+
+@keyframes w3 {
+    50% {
+        transform:
+            translateY(-13px)
+            rotate(-2deg);
+    }
+}
+
+@keyframes w4 {
+    50% {
+        transform:
+            translateY(-10px)
+            rotate(9deg);
+    }
+}
+
+@keyframes w5 {
+    50% {
+        transform:
+            translateY(-12px)
+            rotate(-4deg);
+    }
+}
+
+
+/* =========================================================
+   MEMORY TEXT
+========================================================= */
+
+.message-section {
+
+    position: relative;
+
+    width: 100%;
+
+    max-width: 750px;
+
+    margin:
+        0 auto 120px;
+
+    padding:
+        45px 50px;
+
+    text-align: center;
+
+    background:
+        rgba(255,245,245,.94);
+
+    color: #6c1828;
+
+    border:
+        3px solid #e6a0aa;
+
+    border-radius: 20px;
+
+    box-shadow:
+
+        0 10px 0
+        rgba(100,0,0,.25),
+
+        0 15px 30px
+        rgba(60,0,0,.2);
+}
+
+
+.message-section::before {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 10px;
+
+    border:
+        2px dashed #e5a0aa;
+
+    border-radius: 13px;
+}
+
+
+.message-heart {
+
+    position: absolute;
+
+    top: -18px;
+
+    left: 50%;
+
+    transform:
+        translateX(-50%);
+
+    width: 38px;
+
+    height: 38px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    border-radius: 50%;
+
+    background: #800000;
+
+    color: white;
+
+    z-index: 5;
+}
+
+
+.message-section h2 {
+
+    position: relative;
+
+    z-index: 2;
+
+    margin-bottom: 15px;
+
+    color: #800000;
+
+    font-size: 25px;
+}
+
+
+.message-section p {
+
+    position: relative;
+
+    z-index: 2;
+
+    font-size: 16px;
+
+    line-height: 1.8;
+
+    color: #753442;
+
+    white-space: pre-line;
+}
+
+
+/* =========================================================
+   LIGHTBOX
+========================================================= */
+
+.lightbox {
+
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 300;
+
+    display: none;
+
+    justify-content: center;
+
+    align-items: center;
+
+    background:
+        rgba(50,0,10,.75);
+
+    backdrop-filter:
+        blur(7px);
+}
+
+
+.lightbox.show {
+
+    display: flex;
+}
+
+
+.lightbox img {
+
+    max-width: 90vw;
+
+    max-height: 85vh;
+
+    padding: 10px;
+
+    background: white;
+
+    animation:
+        imagePop .4s ease;
+}
+
+
+@keyframes imagePop {
+
+    from {
+
+        transform:
+            scale(.7)
+            rotate(-5deg);
+    }
+
+    to {
+
+        transform:
+            scale(1)
+            rotate(0);
+    }
+}
+
+
+/* =========================================================
+   MUSIC BUTTON
+========================================================= */
+
+.music-toggle {
+
+    position: fixed;
+
+    bottom: 20px;
+
+    right: 20px;
+
+    z-index: 500;
+
+    width: 45px;
+
+    height: 45px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background:
+        rgba(255,245,245,.9);
+
+    color: #800000;
+
+    font-size: 20px;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 5px 15px
+        rgba(60,0,0,.3);
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media(max-width:700px) {
+
+    .password-container {
+
+        width: 340px;
+
+        padding:
+            35px 20px 25px;
+    }
+
+
+    .password-box {
+
+        width: 48px;
+
+        height: 53px;
+    }
+
+
+    .mail-page {
+
+        min-height: 520px;
+    }
+
+
+    .mail-title {
+
+        font-size: 17px;
+    }
+
+
+    .envelope {
+
+        width: 290px;
+
+        height: 180px;
+    }
+
+
+    .letter {
+
+        min-height: 400px;
+
+        padding:
+            45px 30px;
+    }
+
+
+    .letter-title {
+
+        font-size: 21px;
+    }
+
+
+    .letter-text {
+
+        font-size: 15px;
+    }
+
+
+    .typing-text {
+
+        font-size:
+            clamp(
+                42px,
+                12vw,
+                70px
+            );
+    }
+
+
+    .next-arrow {
+
+        width: 58px;
+
+        height: 58px;
+
+        right: 18px;
+
+        bottom: 20px;
+
+        font-size: 30px;
+    }
+
+
+    .back-button {
+
+        left: 15px;
+
+        bottom: 20px;
+
+        padding:
+            9px 15px;
+    }
+
+
+    .gallery-page {
+
+        padding:
+            50px 12px 100px;
+    }
+
+
+    .gallery-title h1 {
+
+        font-size: 18px;
+    }
+
+
+    .photo-collage {
+
+        height: 650px;
+    }
+
+
+    .photo {
+
+        width: 140px;
+
+        padding: 7px;
+    }
+
+
+    .photo img {
+
+        height: 135px;
+    }
+
+
+    .section-one .photo:nth-child(1) {
+        left: 1%;
+        top: 80px;
+    }
+
+    .section-one .photo:nth-child(2) {
+        left: 43%;
+        top: 10px;
+    }
+
+    .section-one .photo:nth-child(3) {
+        right: 1%;
+        top: 230px;
+    }
+
+    .section-one .photo:nth-child(4) {
+        left: 5%;
+        top: 320px;
+    }
+
+    .section-one .photo:nth-child(5) {
+        left: 44%;
+        bottom: 15px;
+    }
+
+
+    .section-two .photo:nth-child(1) {
+        left: 0;
+        top: 220px;
+    }
+
+    .section-two .photo:nth-child(2) {
+        left: 24%;
+        top: 30px;
+    }
+
+    .section-two .photo:nth-child(3) {
+        left: 42%;
+        top: 220px;
+    }
+
+    .section-two .photo:nth-child(4) {
+        right: 2%;
+        top: 45px;
+    }
+
+    .section-two .photo:nth-child(5) {
+        right: 0;
+        top: 380px;
+    }
+
+
+    .section-three .photo:nth-child(1) {
+        left: 1%;
+        top: 20px;
+    }
+
+    .section-three .photo:nth-child(2) {
+        left: 42%;
+        top: 90px;
+    }
+
+    .section-three .photo:nth-child(3) {
+        right: 0;
+        top: 250px;
+    }
+
+    .section-three .photo:nth-child(4) {
+        left: 5%;
+        top: 330px;
+    }
+
+    .section-three .photo:nth-child(5) {
+        left: 43%;
+        bottom: 15px;
+    }
+
+
+    .section-four .photo:nth-child(1) {
+        left: 0;
+        top: 220px;
+    }
+
+    .section-four .photo:nth-child(2) {
+        left: 24%;
+        top: 30px;
+    }
+
+    .section-four .photo:nth-child(3) {
+        left: 42%;
+        top: 220px;
+    }
+
+    .section-four .photo:nth-child(4) {
+        right: 2%;
+        top: 45px;
+    }
+
+    .section-four .photo:nth-child(5) {
+        right: 0;
+        top: 380px;
+    }
+
+
+    .section-five .photo:nth-child(1) {
+        left: 0;
+        top: 220px;
+    }
+
+    .section-five .photo:nth-child(2) {
+        left: 25%;
+        top: 60px;
+    }
+
+    .section-five .photo:nth-child(3) {
+        left: 45%;
+        top: 240px;
+    }
+
+    .section-five .photo:nth-child(4) {
+        right: 3%;
+        top: 70px;
+    }
+
+    .section-five .photo:nth-child(5) {
+        right: 0;
+        top: 400px;
+    }
+
+
+    .message-section {
+
+        padding:
+            40px 25px;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =========================================================
+     AUDIO
+========================================================= -->
+
+<audio
+    id="bgMusic"
+    src="music.mp3"
+    loop
+    preload="auto">
+</audio>
+
+
+<audio
+    id="clickSound"
+    src="click.mp3"
+    preload="auto">
+</audio>
+
+
+<audio
+    id="appearSound"
+    src="appear.mp3"
+    preload="auto">
+</audio>
+
+
+<audio
+    id="transitionSound"
+    src="transition.mp3"
+    preload="auto">
+</audio>
+
+
+<!-- NEW: TYPING SOUND -->
+
+<audio
+    id="typingSound"
+    src="typing.mp3"
+    preload="auto">
+</audio>
+
+
+
+<!-- =========================================================
+     FLOATING DECORATIONS
+========================================================= -->
+
+<div class="decor heart one">♡</div>
+
+<div class="decor heart two">♥</div>
+
+<div class="decor heart three">♡</div>
+
+<div class="decor heart four">♥</div>
+
+<div class="decor bow one">🎀</div>
+
+<div class="decor bow two">🎀</div>
+
+<div class="decor sparkle one">✦</div>
+
+<div class="decor sparkle two">✧</div>
+
+<div class="decor sparkle three">✦</div>
+
+<div class="decor sparkle four">✧</div>
+
+
+
+<!-- =========================================================
+     PAGE 1 — PASSWORD
+========================================================= -->
+
+<section
+    id="passwordScreen"
+    class="screen active">
+
+
+    <div class="password-container">
+
+
+        <div class="ribbon">
+            🎀
+        </div>
+
+
+        <h1 class="password-title">
+            ♡ Secret Password ♡
+        </h1>
+
+
+        <p class="password-subtitle">
+            Enter the special number...
+        </p>
+
+
+        <div class="password-boxes">
+
+
+            <div
+                class="password-box"
+                id="box1">
+            </div>
+
+
+            <div
+                class="password-box"
+                id="box2">
+            </div>
+
+
+            <div
+                class="password-box"
+                id="box3">
+            </div>
+
+
+            <div
+                class="password-box"
+                id="box4">
+            </div>
+
+
+        </div>
+
+
+        <div class="hint">
+
+            Hint: The day you told me
+            you liked me back ♡
+
+        </div>
+
+
+        <div class="keypad">
+
+
+            <button
+                class="key"
+                onclick="pressNumber(1)">
+                1
+            </button>
+
+
+            <button
+                class="key"
+                onclick="pressNumber(2)">
+                2
+            </button>
+
+
+            <button
+                class="key"
+                onclick="pressNumber(3)">
+                3
+            </button>
+
+
+            <button
+                class="key"
+                onclick="pressNumber(4)">
+                4
+            </button>
+
+
+            <button
+                class="key"
+                onclick="pressNumber(5)">
+                5
+            </button>
+
+
+            <button
+                class="key"
+                onclick="pressNumber(6)">
+                6
+            </button>
+
+
+            <button
+                class="key"
+                onclick="pressNumber(7)">
+                7
+            </button>
+
+
+            <button
+                class="key"
+                onclick="pressNumber(8)">
+                8
+            </button>
+
+
+            <button
+                class="key"
+                onclick="pressNumber(9)">
+                9
+            </button>
+
+
+            <button
+                class="key"
+                onclick="deleteNumber()">
+                ⌫
+            </button>
+
+
+            <button
+                class="key"
+                onclick="pressNumber(0)">
+                0
+            </button>
+
+
+            <button
+                class="key"
+                onclick="checkPassword()">
+                ♥
+            </button>
+
+
+        </div>
+
+
+        <div
+            class="message"
+            id="message">
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     SUCCESS POPUP
+========================================================= -->
+
+<div
+    class="popup-overlay"
+    id="successPopup">
+
+
+    <div class="success-popup">
+
+
+        <div class="success-title">
+            You got it! ♡
+        </div>
+
+
+        <!-- CHANGE THIS IMAGE -->
+
+        <img
+            src="success.png"
+            class="success-image"
+            alt="Cute success image">
+
+
+        <div class="success-text">
+            I have something for you...
+        </div>
+
+
+        <button
+            class="proceed"
+            onclick="goToEnvelope()">
+
+            Continue ♡
+
+        </button>
+
+
+    </div>
+
+</div>
+
+
+
+<!-- =========================================================
+     PAGE 2 — ENVELOPE
+========================================================= -->
+
+<section
+    id="envelopeScreen"
+    class="screen">
+
+
+    <div class="mail-page">
+
+
+        <h1 class="mail-title">
+            ♡ You've Got Mail ♡
+        </h1>
+
+
+        <div class="envelope-area">
+
+
+            <div
+                class="envelope"
+                id="envelope"
+                onclick="openEnvelope()">
+
+
+                <div class="envelope-body">
+                </div>
+
+
+                <div class="envelope-bottom">
+                </div>
+
+
+                <div class="envelope-left">
+                </div>
+
+
+                <div class="envelope-right">
+                </div>
+
+
+                <div class="envelope-flap">
+                </div>
+
+
+                <div class="wax-seal">
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+
+        <p class="instruction">
+            Click the envelope ♡
+        </p>
+
+
+    </div>
+
+
+    <button
+        class="back-button"
+        onclick="goBackToPassword()">
+
+        ← Back
+
+    </button>
+
+
+</section>
+
+
+
+<!-- =========================================================
+     PAGE 3 — LETTER
+========================================================= -->
+
+<section
+    id="letterScreen"
+    class="screen">
+
+
+    <div class="letter">
+
+
+        <h1 class="letter-title">
+            Dear Phiaya ko
+        </h1>
+
+
+        <!-- =================================================
+             CUSTOMIZE YOUR LETTER HERE
+        ================================================= -->
+
+        <div class="letter-text">
+
+Happy 1st confession anniversary baby!!! Unang una sa lahat, gusto ko muna na pasalamatan ka sa lahat ng pagtitis na ginawa mo, i am very grateful na even tho minsan mahirap ako intindihin, you still stayed with me. I love you so much babyyy!!!
+
+1 year na pala yung nakalipas noh baby? I still remember the kilig i felt everytime na mag cacall tayo hehehhe naalalako kung pano mo ko asarin and kunyari magagalit ako pero me was js happy na we were talking and being playful. We often misunderstand each other, we sometimes have different views about things. Pero, even after all that, we still thrive to have the future we always wanted
+
+Our relationship may not be full of rainbows and sunshine, pero it was the most genuine and honest relationship i have ever been in. Im really thankful na dumating ka sa buhay ko phiaya, I love you so muchh!!!!! 
+
+With love,
+Elayd ♡
+
+        </div>
+
+
+    </div>
+
+
+    <!-- BOTTOM ARROW -->
+
+    <button
+        class="next-arrow"
+        onclick="goToAnniversary()">
+
+        ↓
+
+    </button>
+
+
+    <button
+        class="back-button"
+        onclick="goBackToEnvelope()">
+
+        ← Back
+
+    </button>
+
+
+</section>
+
+
+
+<!-- =========================================================
+     PAGE 4 — CONFESSION ANNIVERSARY
+========================================================= -->
+
+<section
+    id="anniversaryScreen"
+    class="screen">
+
+
+    <div class="anniversary-container">
+
+
+        <div class="anniversary-small">
+
+            ♡ A little message for you ♡
+
+        </div>
+
+
+        <div class="typing-text">
+
+            <span id="typingText">
+            </span>
+
+            <span class="typing-cursor">
+            </span>
+
+        </div>
+
+
+        <div class="anniversary-decoration">
+
+            ♡ ✦ ♡
+
+        </div>
+
+
+    </div>
+
+
+    <button
+        class="back-button"
+        onclick="goBackToLetter()">
+
+        ← Back
+
+    </button>
+
+
+    <button
+        class="next-arrow"
+        onclick="goToGallery()">
+
+        ↓
+
+    </button>
+
+
+</section>
+
+
+
+<!-- =========================================================
+     PAGE 5 — PHOTO GALLERY
+========================================================= -->
+
+<section
+    id="galleryScreen"
+    class="screen">
+
+
+    <div class="gallery-page">
+
+
+        <div class="gallery-title">
+
+
+            <h1>
+                ♡ Our Timeline ♡
+            </h1>
+
+
+            <p>
+                Its been along journey huh?
+            </p>
+
+
+        </div>
+
+
+
+        <!-- =================================================
+             SECTION 1
+        ================================================= -->
+
+        <section class="photo-section">
+
+
+            <div class="photo-collage section-one">
+
+
+                <div class="photo">
+                    <img
+                        src="photo1.jpg"
+                        onclick="openPhoto(this)"
+                        alt="Memory 1">
+                </div>
+
+
+                <div class="photo">
+                    <img
+                        src="photo2.jpg"
+                        onclick="openPhoto(this)"
+                        alt="Memory 2">
+                </div>
+
+
+                <div class="photo">
+                    <img
+                        src="photo3.jpg"
+                        onclick="openPhoto(this)"
+                        alt="Memory 3">
+                </div>
+
+
+                <div class="photo">
+                    <img
+                        src="photo4.jpg"
+                        onclick="openPhoto(this)"
+                        alt="Memory 4">
+                </div>
+
+
+                <div class="photo">
+                    <img
+                        src="photo5.jpg"
+                        onclick="openPhoto(this)"
+                        alt="Memory 5">
+                </div>
+
+
+            </div>
+
+
+        </section>
+
+
+        <section class="message-section">
+
+            <div class="message-heart">
+                ♥
+            </div>
+
+            <h2>
+                Grade 7 ♡
+            </h2>
+
+            <p>
+           Nung time na 'to yung una kitang nakilala, we were close friends pero we never got involved romantically. During this time nagagandahan ako sayo pero I didn't feel anything special..
+            </p>
+
+        </section>
+
+
+
+        <!-- =================================================
+             SECTION 2 — DIAMOND
+        ================================================= -->
+
+        <section class="photo-section">
+
+
+            <div class="photo-collage section-two">
+
+
+                <div class="photo">
+                    <img
+                        src="photo6.jpg"
+                        onclick="openPhoto(this)"
+                        alt="Memory 6">
+                </div>
+
+
+                <div class="photo">
+                    <img
+                        src="photo7.jpg"
+                        onclick="openPhoto(this)"
+                        alt="Memory 7">
+                </div>
+
+
+                <div class="photo">
+                    <img
+                        src="photo8.jpg"
+                        onclick="openPhoto(this)"
+                        alt="Memory 8">
+                </div>
+
+
+                <div class="photo">
+                    <img
+                        src="photo9.jpg"
+                        onclick="openPhoto(this)"
+                        alt="Memory 9">
+                </div>
+
+
+                <div class="photo">
+                    <img
+                        src="photo10.jpg"
+                        onclick="openPhoto(this)"
+                        alt="Memory 10">
+                </div>
+
+
+            </div>
+
+
+        </section>
+
+
+        <section class="message-section">
+
+            <div class="message-heart">
+                ♥
+            </div>
+
+            <h2>
+                Grade 10 ♡
+            </h2>
+
+            <p>
+Fast forward to grade 10, naging kaklase ulit kita. You immediately caught my eye kasi nga gandang ganda ako sayo grade 7 palang tayo. At first, i was indenial about my feelings. I thought di tayo mag c-click kasi nga feeling ko hindi tayo compatible for each other. Pero hindi ko napigilan nararamdaman ko, kahit anong gawin ko mahal ikaw pa rin talaga gusto ko ih…
+
+
+Dumating ang sabayang pag bigkas at napansin ko na mas lalo lang lumala yung pagmamahal ko para sayo, para bang the hulk na hindi mapahinto kahit na anong gawin ko. Natapos ang sabayang pagbigkas na narealize ko na baka gusto nga talaga kita. Dumating din ang ating fieldtrip at mas lalo ko lang naisip kung gano kita kagusto, gustong gusto kita, ikaw ang pinakaunang tao na minahal ko ng ganto.
+            </p>
+
+        </section>
+
+
+
+        <!-- =================================================
+             SECTION 3 — SCATTERED
+        ================================================= -->
+
+        <section class="photo-section">
+
+
+            <div class="photo-collage section-three">
+
+
+                <div class="photo">
+                    <img
+                        src="photo11.jpg"
+                        onclick="openPhoto(this)"
+                        alt="Memory 11">
+                </div>
+
+
+                <div class="photo">
+                    <img
+                        src="photo12.jpg"
+                        onclick="openPhoto(this)"
+                        alt="Memory 12">
+                </div>
+
+
+                <div class="photo">
+                    <img
+                        src="photo13.jpg"
+                        onclick="openPhoto(this)"
+                        alt="Memory 13">
+                </div>
+
+
+                <div class="photo">
+                    <img
+                        src="photo14.jpg"
+                        onclick="openPhoto(this)"
+                        alt="Memory 14">
+                </div>
+
+
+                <div class="photo">
+                    <img
+                        src="photo15.jpg"
+                        onclick="openPhoto(this)"
+                        alt="Memory 15">
+                </div>
+
+
+            </div>
+
+
+        </section>
+
+
+        <section class="message-section">
+
+            <div class="message-heart">
+                ♥
+            </div>
+
+            <h2>
+                Confession ♡
+            </h2>
+
+            <p>
+Aug 17, Nakita ko na nag paparinig ka sa ig, sabi mo sa notes mo “i hope this is not casual” edi pinangako ko sa sarili ko na by aug 20 mag coconfess na ako sayo para ma reassure kita na hindi 'to casual lang. Aug 20, last day of our exam, naalala ko pa yung pakiramdam ko habang iniisip kung pano ko sasabihin sayo na mahal kita. Dalawang salita na noon ay napaka hiram bigkasin. Hindi ko na naisip yung sagot sa math exams ko dahil sa kaiisip sa kung paano ko sasabihin sayong mahal nga kita.
+
+Past forward, tinry ko mag confess kaso sinundo ka ni papa robert mo. After nun akala ko bali wala lang yung pangako ko sa sarili ko kasi di naman ako puwede mag confess nalang basta basta habang nandiyan pa si papa robert. Kaya ang ginawa ko, nag dasal nalang ako kay papa God, “Lord, bigyan niyo lang po ako ng isa pang pagkakataon promise po Lord promise ko po talaga sainyo i will take that opportunity” pagkatapos kong magdasal tinanong kita, “saan kayo punta?” Sabi mo “sa sm, bakit?” Naalala ko pa kung gaano ako kasaya nun, saya at kaba yung nararamdaman ko. Matapos kong mabalitaan yun, agad agad kaming pumunt asa sm upang ituloy yung plano.. naalala ko pa nung kumakain kayo sa favorite na resto ni sir marlou na may chicken wings habang kami ni munar ay nasa kabilang table nag aantay ng chance para masabi ko sayo na gusto kita.
+           
+Sa sobrang kaba ko, hindi ko na alam kung pano tayo napunta sa starbucks. Pero, natatandaan ko na iniisip ko nalang noong panahon na ‘yon ay kung paano ko sasabihin sayo na gusto kita. Iniisip ko kung anong oras, anong petcha, at kung kailan ko ba talaga sasabihin. Hanggang sa bigla ka nalang nag pasundo, kaya nung narinig ko yun, sinimulan ko na ang pag buwelo ko. Matapos ang ilang oras ko na pag bwelo, sa wakas nabulong ko na sayo na may gusto nga ako sayo. Akala ko kaya kong mag stay, pero sa sobrang hiya ko napatakbo nalang ako. Nakakahiya pero bigla nalang kami lumabas nun…. Kabang kaba aako habang umuuwi kaya napasulat ako sa notes ko.
+
+Lowbat ka nung panahon na yun kaya hindi mo ako masagot, nag confess ako ng alaskwatro at nasagot mo ako ng alasingko emedya. Naalala ko pa yung kaba ko habang yung tatlong bilog habang nag t-type ka ay gumagawa ng mala alon na animation. Sobrang na eexcite ako sa sagot mo nun, pero meron din akong kaba na nararamdaman. Hanggang sa sinend mo na ang sagot mo, at napatalon ako sa tuwa nang malaman ko na gusto mo rin pala ako…
+        </p>
+
+        </section>
+
+
+
+        <!-- =================================================
+             SECTION 4 — DIAMOND
+        ================================================= -->
+
+        <section class="photo-section">
+
+
+            <div class="photo-collage section-four">
+
+
+                <div class="photo">
+                    <img
+                        src="photo16.jpg"
+                        onclick="openPhoto(this)"
+                        alt="Memory 16">
+                </div>
+
+
+                <div class="photo">
+                    <img
+                        src="photo17.jpg"
+                        onclick="openPhoto(this)"
+                        alt="Memory 17">
+                </div>
+
+
+                <div class="photo">
+                    <img
+                        src="photo18.jpg"
+                        onclick="openPhoto(this)"
+                        alt="Memory 18">
+                </div>
+
+
+                <div class="photo">
+                    <img
+                        src="photo19.jpg"
+                        onclick="openPhoto(this)"
+                        alt="Memory 19">
+                </div>
+
+
+                <div class="photo">
+                    <img
+                        src="photo20.jpg"
+                        onclick="openPhoto(this)"
+                        alt="Memory 20">
+                </div>
+
+
+            </div>
+
+
+        </section>
+
+
+        <section class="message-section">
+
+            <div class="message-heart">
+                ♥
+            </div>
+
+            <h2>
+                Prom ♡
+            </h2>
+
+            <p>
+Naging cotillion tayong dalawa hehe, hindi ko naisip na bibigyan ako ni Lord ng pagkakataon na maisayaw ka, akala ko ay magseselos nalang ulit ako kay discar dahil nga nagustuhan mo siya noon. Grabe ang kaba ko habang namimili si sir Gian ng para sa Cotillion, kabang kaba ako na may halo g excitement kasi nga ay baka maisayaw kita.
+
+Fast forward sa prom, sumayaw tayo sa gitna. Oo, nagkakaapak apakan tayo dahil sa sikip ng puwesto, pero ni kailanman ay naisip ko na sana hindi ko nalang ginawa yun. Napaka saya ko noong panaho na yun dahil nasasayaw kita s harap ng maraming tao, parang ako na ata ang pinaka masayang tao nung panahon na 'yun.
+            </p>
+
+        </section>
+
+
+
+        <!-- =================================================
+             SECTION 5
+        ================================================= -->
+
+        <section class="photo-section">
+
+
+            <div class="photo-collage section-five">
+
+
+                <div class="photo">
+                    <img
+                        src="photo21.jpg"
+                        onclick="openPhoto(this)"
+                        alt="Memory 21">
+                </div>
+
+
+                <div class="photo">
+                    <img
+                        src="photo22.jpg"
+                        onclick="openPhoto(this)"
+                        alt="Memory 22">
+                </div>
+
+
+                <div class="photo">
+                    <img
+                        src="photo23.jpg"
+                        onclick="openPhoto(this)"
+                        alt="Memory 23">
+                </div>
+
+
+                <div class="photo">
+                    <img
+                        src="photo24.jpg"
+                        onclick="openPhoto(this)"
+                        alt="Memory 24">
+                </div>
+
+
+                <div class="photo">
+                    <img
+                        src="photo25.jpg"
+                        onclick="openPhoto(this)"
+                        alt="Memory 25">
+                </div>
+
+
+            </div>
+
+
+        </section>
+
+
+        <section class="message-section">
+
+            <div class="message-heart">
+                ♥
+            </div>
+
+            <h2>
+                To Many More ♡
+            </h2>
+
+            <p>
+1 year na since i confessed. Oo, may mga hardships tayong naranasan na muntik na maywi sa hiwalayan, pero hindi ako sumuko. Papangako ko sayo phiaya ko, hinding hundi ako susuko sa kung anong meron tayo, dahil ikaw at ikaw lang ang gusto ko. Gusto ko na makasama ka habang buhay, hanggang mamatay.. for more years to come!!!
+
+Happy Confession Anniversary, Babi! ♡
+            </p>
+
+        </section>
+
+
+    </div>
+
+
+    <button
+        class="back-button"
+        onclick="goBackToAnniversary()">
+
+        ← Back
+
+    </button>
+
+
+</section>
+
+
+
+<!-- =========================================================
+     PHOTO LIGHTBOX
+========================================================= -->
+
+<div
+    class="lightbox"
+    id="lightbox"
+    onclick="closePhoto()">
+
+
+    <img
+        id="lightboxImage"
+        src=""
+        alt="Expanded memory">
+
+
+</div>
+
+
+
+<!-- =========================================================
+     MUSIC BUTTON
+========================================================= -->
+
+<button
+    class="music-toggle"
+    id="musicToggle"
+    onclick="toggleMusic()">
+
+    ♫
+
+</button>
+
+
+
+<script>
+
+/* =========================================================
+   CUSTOMIZE THESE
+========================================================= */
+
+
+/*
+   CHANGE THIS TO YOUR 4-DIGIT PASSWORD
+
+   Example:
+   "0714"
+*/
+
+const CORRECT_PASSWORD = "0820";
+
+
+/*
+   CHANGE THE ANNIVERSARY MESSAGE HERE
+*/
+
+const anniversaryMessage =
+    "Happy Confession Anniversary Babi!";
+
+
+/*
+   CHANGE TYPING SPEED HERE
+
+   50  = fast
+   85  = normal
+   120 = slow
+*/
+
+const TYPING_SPEED = 85;
+
+
+/*
+   CHANGE TYPING SOUND VOLUME
+
+   0.1 = quiet
+   0.25 = recommended
+   0.5 = loud
+*/
+
+const TYPING_VOLUME = 0.25;
+
+
+
+/* =========================================================
+   GET ELEMENTS
+========================================================= */
+
+const passwordScreen =
+    document.getElementById(
+        "passwordScreen"
+    );
+
+
+const envelopeScreen =
+    document.getElementById(
+        "envelopeScreen"
+    );
+
+
+const letterScreen =
+    document.getElementById(
+        "letterScreen"
+    );
+
+
+const anniversaryScreen =
+    document.getElementById(
+        "anniversaryScreen"
+    );
+
+
+const galleryScreen =
+    document.getElementById(
+        "galleryScreen"
+    );
+
+
+const successPopup =
+    document.getElementById(
+        "successPopup"
+    );
+
+
+const message =
+    document.getElementById(
+        "message"
+    );
+
+
+const bgMusic =
+    document.getElementById(
+        "bgMusic"
+    );
+
+
+const clickSound =
+    document.getElementById(
+        "clickSound"
+    );
+
+
+const appearSound =
+    document.getElementById(
+        "appearSound"
+    );
+
+
+const transitionSound =
+    document.getElementById(
+        "transitionSound"
+    );
+
+
+const typingSound =
+    document.getElementById(
+        "typingSound"
+    );
+
+
+let enteredPassword = "";
+
+let envelopeOpened = false;
+
+let typingTimer = null;
+
+let musicStarted = false;
+
+
+
+/* =========================================================
+   MUSIC
+========================================================= */
+
+function startMusic() {
+
+    if (musicStarted)
+        return;
+
+
+    bgMusic.volume = 0.35;
+
+
+    bgMusic.play()
+        .then(() => {
+
+            musicStarted = true;
+
+        })
+        .catch(() => {
+
+            /*
+               Browser may block autoplay.
+               Music will start after a user click.
+            */
+
+        });
+
+}
+
+
+/*
+   Try to start when the user first
+   interacts with the page.
+*/
+
+document.addEventListener(
+    "click",
+    startMusic,
+    {
+        once: true
+    }
+);
+
+
+
+/* =========================================================
+   SOUND FUNCTIONS
+========================================================= */
+
+function playClick() {
+
+    if (!clickSound)
+        return;
+
+
+    clickSound.currentTime = 0;
+
+    clickSound.volume = 0.45;
+
+    clickSound.play()
+        .catch(() => {});
+
+}
+
+
+function playAppear() {
+
+    if (!appearSound)
+        return;
+
+
+    appearSound.currentTime = 0;
+
+    appearSound.volume = 0.45;
+
+    appearSound.play()
+        .catch(() => {});
+
+}
+
+
+function playTransition() {
+
+    if (!transitionSound)
+        return;
+
+
+    transitionSound.currentTime = 0;
+
+    transitionSound.volume = 0.35;
+
+    transitionSound.play()
+        .catch(() => {});
+
+}
+
+
+
+/* =========================================================
+   PASSWORD
+========================================================= */
+
+function pressNumber(number) {
+
+    startMusic();
+
+    playClick();
+
+
+    if (enteredPassword.length >= 4)
+        return;
+
+
+    enteredPassword += number;
+
+
+    updatePasswordBoxes();
+
+
+    if (enteredPassword.length === 4) {
+
+        setTimeout(
+            checkPassword,
+            180
+        );
+
+    }
+
+}
+
+
+function deleteNumber() {
+
+    playClick();
+
+
+    enteredPassword =
+        enteredPassword.slice(
+            0,
+            -1
+        );
+
+
+    updatePasswordBoxes();
+
+}
+
+
+function updatePasswordBoxes() {
+
+    const boxes = [
+
+        document.getElementById("box1"),
+
+        document.getElementById("box2"),
+
+        document.getElementById("box3"),
+
+        document.getElementById("box4")
+
+    ];
+
+
+    boxes.forEach(
+        (box,index) => {
+
+            if (
+                index <
+                enteredPassword.length
+            ) {
+
+                box.textContent = "♥";
+
+                box.classList.add(
+                    "filled"
+                );
+
+            } else {
+
+                box.textContent = "";
+
+                box.classList.remove(
+                    "filled"
+                );
+
+            }
+
+        }
+    );
+
+}
+
+
+function checkPassword() {
+
+    if (
+        enteredPassword.length !== 4
+    ) {
+
+        return;
+
+    }
+
+
+    if (
+        enteredPassword ===
+        CORRECT_PASSWORD
+    ) {
+
+        message.textContent =
+            "Correct! ♡";
+
+
+        playAppear();
+
+
+        successPopup.classList.add(
+            "show"
+        );
+
+
+    } else {
+
+        message.textContent =
+            "Not quite... try again ♡";
+
+
+        playClick();
+
+
+        const container =
+            document.querySelector(
+                ".password-container"
+            );
+
+
+        container.animate(
+
+            [
+                {
+                    transform:
+                        "translateX(0)"
+                },
+
+                {
+                    transform:
+                        "translateX(-8px)"
+                },
+
+                {
+                    transform:
+                        "translateX(8px)"
+                },
+
+                {
+                    transform:
+                        "translateX(-5px)"
+                },
+
+                {
+                    transform:
+                        "translateX(0)"
+                }
+
+            ],
+
+            {
+                duration: 350
+            }
+
+        );
+
+
+        enteredPassword = "";
+
+
+        setTimeout(
+            updatePasswordBoxes,
+            300
+        );
+
+    }
+
+}
+
+
+
+/* =========================================================
+   PAGE NAVIGATION
+========================================================= */
+
+function switchScreen(
+    current,
+    next
+) {
+
+    playTransition();
+
+
+    current.classList.remove(
+        "active"
+    );
+
+
+    next.classList.add(
+        "active"
+    );
+
+
+    window.scrollTo({
+        top: 0,
+        behavior: "instant"
+    });
+
+}
+
+
+
+/* =========================================================
+   PAGE 1 → PAGE 2
+========================================================= */
+
+function goToEnvelope() {
+
+    playClick();
+
+
+    successPopup.classList.remove(
+        "show"
+    );
+
+
+    setTimeout(
+        () => {
+
+            switchScreen(
+                passwordScreen,
+                envelopeScreen
+            );
+
+        },
+        200
+    );
+
+}
+
+
+
+/* =========================================================
+   PAGE 2 → PAGE 1
+========================================================= */
+
+function goBackToPassword() {
+
+    playClick();
+
+
+    switchScreen(
+        envelopeScreen,
+        passwordScreen
+    );
+
+}
+
+
+
+/* =========================================================
+   OPEN ENVELOPE
+========================================================= */
+
+function openEnvelope() {
+
+    if (envelopeOpened)
+        return;
+
+
+    envelopeOpened = true;
+
+
+    playClick();
+
+
+    const envelope =
+        document.getElementById(
+            "envelope"
+        );
+
+
+    envelope.classList.add(
+        "open"
+    );
+
+
+    setTimeout(
+        () => {
+
+            playAppear();
+
+
+            switchScreen(
+                envelopeScreen,
+                letterScreen
+            );
+
+        },
+        1100
+    );
+
+}
+
+
+
+/* =========================================================
+   PAGE 3 → PAGE 2
+========================================================= */
+
+function goBackToEnvelope() {
+
+    playClick();
+
+
+    switchScreen(
+        letterScreen,
+        envelopeScreen
+    );
+
+}
+
+
+
+/* =========================================================
+   PAGE 3 → PAGE 4
+========================================================= */
+
+function goToAnniversary() {
+
+    playClick();
+
+
+    switchScreen(
+        letterScreen,
+        anniversaryScreen
+    );
+
+
+    startTyping();
+
+}
+
+
+
+/* =========================================================
+   PAGE 4 → PAGE 3
+========================================================= */
+
+function goBackToLetter() {
+
+    playClick();
+
+
+    clearTimeout(
+        typingTimer
+    );
+
+
+    switchScreen(
+        anniversaryScreen,
+        letterScreen
+    );
+
+}
+
+
+
+/* =========================================================
+   TYPING ANIMATION + TYPING SOUND
+========================================================= */
+
+function startTyping() {
+
+    const textElement =
+        document.getElementById(
+            "typingText"
+        );
+
+
+    if (!textElement)
+        return;
+
+
+    clearTimeout(
+        typingTimer
+    );
+
+
+    textElement.textContent =
+        "";
+
+
+    let index = 0;
+
+
+    /*
+       Small delay so the page
+       can appear first.
+    */
+
+    setTimeout(
+        typeNextCharacter,
+        400
+    );
+
+
+    function typeNextCharacter() {
+
+        if (
+            index >=
+            anniversaryMessage.length
+        ) {
+
+            return;
+
+        }
+
+
+        /*
+           Add one character.
+        */
+
+        textElement.textContent +=
+            anniversaryMessage[index];
+
+
+        /*
+           Play the typing sound
+           for each non-space character.
+        */
+
+        if (
+            typingSound &&
+            anniversaryMessage[index]
+                !== " "
+        ) {
+
+            typingSound.currentTime = 0;
+
+            typingSound.volume =
+                TYPING_VOLUME;
+
+
+            typingSound.play()
+                .catch(() => {});
+
+        }
+
+
+        index++;
+
+
+        /*
+           Continue typing.
+        */
+
+        typingTimer = setTimeout(
+            typeNextCharacter,
+            TYPING_SPEED
+        );
+
+    }
+
+}
+
+
+
+/* =========================================================
+   PAGE 4 → PAGE 5
+========================================================= */
+
+function goToGallery() {
+
+    playClick();
+
+
+    switchScreen(
+        anniversaryScreen,
+        galleryScreen
+    );
+
+}
+
+
+
+/* =========================================================
+   PAGE 5 → PAGE 4
+========================================================= */
+
+function goBackToAnniversary() {
+
+    playClick();
+
+
+    switchScreen(
+        galleryScreen,
+        anniversaryScreen
+    );
+
+}
+
+
+
+/* =========================================================
+   PHOTO LIGHTBOX
+========================================================= */
+
+function openPhoto(image) {
+
+    playClick();
+
+
+    const lightbox =
+        document.getElementById(
+            "lightbox"
+        );
+
+
+    const lightboxImage =
+        document.getElementById(
+            "lightboxImage"
+        );
+
+
+    lightboxImage.src =
+        image.src;
+
+
+    lightbox.classList.add(
+        "show"
+    );
+
+}
+
+
+function closePhoto() {
+
+    const lightbox =
+        document.getElementById(
+            "lightbox"
+        );
+
+
+    lightbox.classList.remove(
+        "show"
+    );
+
+}
+
+
+
+/* =========================================================
+   MUSIC TOGGLE
+========================================================= */
+
+function toggleMusic() {
+
+    if (
+        bgMusic.paused
+    ) {
+
+        bgMusic.play()
+            .then(() => {
+
+                musicStarted = true;
+
+                document.getElementById(
+                    "musicToggle"
+                ).textContent = "♫";
+
+            })
+            .catch(() => {});
+
+
+    } else {
+
+        bgMusic.pause();
+
+
+        document.getElementById(
+            "musicToggle"
+        ).textContent = "♪";
+
+    }
+
+}
+
+
+
+/* =========================================================
+   KEYBOARD SUPPORT
+========================================================= */
+
+document.addEventListener(
+    "keydown",
+    function(event) {
+
+        if (
+            event.key >= "0" &&
+            event.key <= "9"
+        ) {
+
+            pressNumber(
+                Number(event.key)
+            );
+
+        }
+
+
+        if (
+            event.key ===
+            "Backspace"
+        ) {
+
+            deleteNumber();
+
+        }
+
+
+        if (
+            event.key ===
+            "Escape"
+        ) {
+
+            closePhoto();
+
+        }
+
+    }
+);
+
+</script>
+
+
+</body>
+</html>
